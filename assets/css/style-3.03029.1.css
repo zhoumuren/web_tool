@@ -746,6 +746,10 @@ input[type="radio"] + label,input[type="checkbox"] + label{font-weight:400}
 .icon-5x{font-size:5em}
 .icon-8x{font-size:8em}
 .icon-fw{text-align:center;width:1.25em}
+/* 折叠时去掉 icon 固定宽度 */
+.mini-sidebar .icon-fw {
+    width: auto !important;
+}
 .icon-spin{-webkit-animation:icon-spin 2s infinite linear;animation:icon-spin 2s infinite linear}
 .hot-card .hot-body{height:200px}
 .hot-card .hot-heat{white-space:nowrap}
