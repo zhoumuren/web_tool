@@ -62,21 +62,8 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .sidebar-menu{transition:all .3s;}
 .sidebar-nav .flex-bottom a,.sidebar-menu-inner a{display:block;overflow:hidden;padding-left: 2.0rem;line-height:40px;max-height:40px;color:#b2b8be;transition:all .3s}
 /* 折叠状态：图标居中 */
-.mini-sidebar .sidebar-menu-inner a {
+.mini-sidebar .sidebar-menu-inner .flex-bottom a {
     padding-left: 0 !important;
-    text-align: center;
-}
-
-/* 折叠状态：所有图标真正居中 */
-.mini-sidebar .sidebar-menu-inner i,
-.mini-sidebar .sidebar-nav .flex-bottom i {
-    margin-right: 0 !important;
-}
-
-/* 防止 inline 偏移 */
-.mini-sidebar .sidebar-menu-inner a,
-.mini-sidebar .sidebar-nav .flex-bottom a {
-    display: block;
     text-align: center;
 }
 .sidebar-menu ul:first-child > li> a,.sidebar-menu ul:first-child > li> a span{ line-height:50px;max-height:50px;}
