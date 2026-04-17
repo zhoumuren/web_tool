@@ -109,30 +109,6 @@ footer.main-footer .footer-text a:hover {
     background-color: #d8d8d8;
 }
 
-/* 1. 确保最外层容器开启弹性布局 */
-.page-container {
-    display: flex !important;
-}
-
-/* 2. 锁定左边栏宽度 */
-#sidebar {
-    width: 240px !important;
-    flex: 0 0 240px !important; /* 关键：固定240px，不放大不缩小 */
-    min-width: 240px;
-}
-
-/* 3. 让右侧内容区自动填满剩下的空间 */
-.main-content {
-    flex: 1 !important;        /* 关键：自动占据剩余宽度 */
-    margin-left: 0 !important;  /* 既然用了 flex，就不再需要 margin 来避开左侧 */
-    min-width: 0;               /* 防止内容溢出撑开容器 */
-}
-
-/* 4. 适配：如果你原有设计有顶部占位或 header，确保它们也跟随宽度变化 */
-.page-header.sticky {
-    /* 如果 header 宽度不对，可以取消 fixed 宽度或动态调整 */
-    width: auto !important;
-}
 
 
 
