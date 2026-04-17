@@ -378,11 +378,11 @@
             $('.sidebar-menu ul ul').css("display", "none");
             if(isNoAnim){
                 $('.sidebar-nav').removeClass('animate-nav');
-                $('.sidebar-nav').width(220);
+                $('.sidebar-nav').width(240);
             }
             else{
                 $('.sidebar-nav').addClass('animate-nav');
-                $('.sidebar-nav').stop().animate({width: 170},200);
+                $('.sidebar-nav').stop().animate({width: 240},200);
             }
         }else{
             $('.sidebar-item.sidebar-show').removeClass('sidebar-show');
