@@ -67,9 +67,16 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
     text-align: center;
 }
 
-/* 底部菜单（国度资源 / 关于我们） */
+/* 折叠状态：所有图标真正居中 */
+.mini-sidebar .sidebar-menu-inner i,
+.mini-sidebar .sidebar-nav .flex-bottom i {
+    margin-right: 0 !important;
+}
+
+/* 防止 inline 偏移 */
+.mini-sidebar .sidebar-menu-inner a,
 .mini-sidebar .sidebar-nav .flex-bottom a {
-    padding-left: 0 !important;
+    display: block;
     text-align: center;
 }
 .sidebar-menu ul:first-child > li> a,.sidebar-menu ul:first-child > li> a span{ line-height:50px;max-height:50px;}
