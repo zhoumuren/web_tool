@@ -109,15 +109,6 @@ footer.main-footer .footer-text a:hover {
     background-color: #d8d8d8;
 }
 
-/* ⭐ 左侧宽度（统一控制） */
-#sidebar{
-  width:240px !important;
-}
-
-/* ⭐ 右侧内容同步 */
-.content-site{
-  margin-left:240px !important;
-}
 
 
 
