@@ -277,15 +277,26 @@ body {
 
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
 							<script>
-                                fetch('https://bibleverses.mentu.faith')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                    const bibleverses = document.getElementById('bibleverses_text')
-                                    bibleverses.href = 'https://bibleverses.mentu.faith/?uuid=' + data.uuid
-                                    bibleverses.innerText = data.reference
-                                    })
-                                    .catch(console.error)
-                            </script>
+fetch('https://bibleverses.mentu.faith/api/random')
+    .then(response => response.json())
+    .then(data => {
+        const bibleverses = document.getElementById('bibleverses_text')
+
+        // 跳转链接（如果有 uuid）
+        if (data.uuid) {
+            bibleverses.href = 'https://bibleverses.mentu.faith/?uuid=' + data.uuid
+        }
+
+        // 显示内容
+        bibleverses.innerText = data.reference 
+            ? data.text + ' —— ' + data.reference
+            : data.text
+    })
+    .catch(err => {
+        console.error(err)
+        document.getElementById('bibleverses_text').innerText = '加载失败'
+    })
+</script>
                             <div id="bibleverses"><a href="#" target="_blank" id="bibleverses_text">你要保守你心，胜过保守一切。</a></div>
                         </li>
 
