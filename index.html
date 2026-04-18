@@ -277,20 +277,28 @@ body {
 
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
                             <script>
-fetch('https://bibleverses.mentu.faith/api/random')
-    .then(res => res.json())
-    .then(data => {
+async function loadVerse() {
+    try {
+        const res = await fetch('https://bibleverses.mentu.faith/api/random')
+        const data = await res.json()
+
         const el = document.getElementById('bibleverses_text')
 
         const text = data.bibleverses || data.text || data.data?.text || data.data
         const ref  = data.from || data.reference || data.data?.reference || ''
 
         el.innerText = ref ? text + " —— " + ref : text
-        el.href = "#"
-    })
-    .catch(err => {
+
+    } catch (err) {
         console.error(err)
-    })
+    }
+}
+
+// ✅ 页面加载时执行一次
+loadVerse()
+
+// ✅ 每30秒自动切换（可改）
+setInterval(loadVerse, 30000)
 </script>
                             <div id="bibleverses"><a href="#" target="_blank" id="bibleverses_text">你要保守你心，胜过保守一切。</a></div>
                         </li>
