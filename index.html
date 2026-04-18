@@ -280,15 +280,27 @@ body {
 async function loadVerse() {
     try {
         const res = await fetch('https://bibleverses.mentu.faith/api/random')
-        const data = await res.json()
+
+        // ⭐先检查状态
+        if (!res.ok) {
+            throw new Error('接口错误: ' + res.status)
+        }
+
+        // ⭐先转文本，再解析（防止JSON报错）
+        const textData = await res.text()
+
+        let data
+        try {
+            data = JSON.parse(textData)
+        } catch {
+            throw new Error('返回不是JSON: ' + textData.substring(0,100))
+        }
 
         const el = document.getElementById('bibleverses_text')
 
-        // ⭐简化（不用兜底写法）
-        const text = data.text
-        const ref  = data.reference
-
-        el.innerText = ref ? text + " —— " + ref : text
+        el.innerText = data.reference 
+            ? data.text + " —— " + data.reference 
+            : data.text
 
     } catch (err) {
         console.error(err)
@@ -296,10 +308,7 @@ async function loadVerse() {
     }
 }
 
-// 页面加载
 loadVerse()
-
-// 自动轮播（30秒）
 setInterval(loadVerse, 30000)
 </script>
                             <div id="bibleverses"><a href="#" target="_blank" id="bibleverses_text">你要保守你心，胜过保守一切。</a></div>
