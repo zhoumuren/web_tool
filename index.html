@@ -277,15 +277,24 @@ body {
 
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
                             <script>
-                                fetch('https://v1.hitokoto.cn')
-                                    .then(response => response.json())
-                                    .then(data => {
-                                    const hitokoto = document.getElementById('hitokoto_text')
-                                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
-                                    hitokoto.innerText = data.hitokoto
-                                    })
-                                    .catch(console.error)
-                            </script>
+fetch('https://bibleverses.mentu.faith/api/random')
+    .then(res => res.json())
+    .then(data => {
+        const hitokoto = document.getElementById('hitokoto_text')
+
+        // 显示圣经金句
+        hitokoto.innerText = data.data.text || data.data
+
+        // 显示出处（如果有）
+        if (data.data.reference) {
+            hitokoto.innerText += " —— " + data.data.reference
+        }
+
+        // 设置链接（可以根据需要修改）
+        hitokoto.href = "#"
+    })
+    .catch(console.error)
+</script>
                             <div id="hitokoto"><a href="#" target="_blank" id="hitokoto_text">你要保守你心，胜过保守一切。</a></div>
                         </li>
 
