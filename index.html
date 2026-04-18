@@ -282,16 +282,10 @@ fetch('https://bibleverses.mentu.faith/api/random')
     .then(data => {
         const el = document.getElementById('bibleverses_text')
 
-        // 兼容多种返回结构（非常关键）
         const text = data.bibleverses || data.text || data.data?.text || data.data
         const ref  = data.from || data.reference || data.data?.reference || ''
 
-        el.innerText = text
-
-        if (ref) {
-            el.innerText += " —— " + ref
-        }
-
+        el.innerText = ref ? text + " —— " + ref : text
         el.href = "#"
     })
     .catch(err => {
