@@ -280,18 +280,18 @@ body {
 fetch('https://bibleverses.mentu.faith/api/random')
     .then(res => res.json())
     .then(data => {
-        const hitokoto = document.getElementById('hitokoto_text')
+        const bibleverses = document.getElementById('bibleverses_text')
 
         // 显示圣经金句
-        hitokoto.innerText = data.data.text || data.data
+        bibleverses.innerText = data.data.text || data.data
 
         // 显示出处（如果有）
         if (data.data.reference) {
-            hitokoto.innerText += " —— " + data.data.reference
+            bibleverses.innerText += " —— " + data.data.reference
         }
 
         // 设置链接（可以根据需要修改）
-        hitokoto.href = "#"
+        bibleverses.href = "#"
     })
     .catch(console.error)
 </script>
