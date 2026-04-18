@@ -284,20 +284,22 @@ async function loadVerse() {
 
         const el = document.getElementById('bibleverses_text')
 
-        const text = data.bibleverses || data.text || data.data?.text || data.data
-        const ref  = data.from || data.reference || data.data?.reference || ''
+        // ⭐简化（不用兜底写法）
+        const text = data.text
+        const ref  = data.reference
 
         el.innerText = ref ? text + " —— " + ref : text
 
     } catch (err) {
         console.error(err)
+        document.getElementById('bibleverses_text').innerText = "加载失败"
     }
 }
 
-// ✅ 页面加载时执行一次
+// 页面加载
 loadVerse()
 
-// ✅ 每30秒自动切换（可改）
+// 自动轮播（30秒）
 setInterval(loadVerse, 30000)
 </script>
                             <div id="bibleverses"><a href="#" target="_blank" id="bibleverses_text">你要保守你心，胜过保守一切。</a></div>
