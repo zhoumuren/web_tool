@@ -277,11 +277,11 @@ body {
 
                         <li class="nav-item mr-3 mr-lg-0 d-none d-lg-block">
 							<script>
-                                fetch('bibleverses.mentu.faith')
+                                fetch('https://bibleverses.mentu.faith')
                                     .then(response => response.json())
                                     .then(data => {
                                     const bibleverses = document.getElementById('bibleverses_text')
-                                    bibleverses.href = 'bibleverses.mentu.faith/?uuid=' + data.uuid
+                                    bibleverses.href = 'https://bibleverses.mentu.faith/?uuid=' + data.uuid
                                     bibleverses.innerText = data.bibleverses
                                     })
                                     .catch(console.error)
