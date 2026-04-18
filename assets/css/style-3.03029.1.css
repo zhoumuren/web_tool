@@ -78,7 +78,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40px; /* 显式固定高度，防止塌陷 */
+    height: 30px; /* 显式固定高度，防止塌陷 */
 }
 
 /* 确保图标居中且无右边距 */
