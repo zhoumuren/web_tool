@@ -67,21 +67,26 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
     text-align: center;
 }
 
-/* 当侧边栏处于缩进状态（mini-sidebar）时 */
+/* 当侧边栏处于缩进状态时，处理底部菜单 */
+.mini-sidebar .flex-bottom li.sidebar-item {
+    margin-bottom: 15px !important; /* 在这里增加两个图标之间的垂直间距 */
+}
+
 .mini-sidebar .flex-bottom a {
-    padding-left: 0 !important;   /* 移除左侧缩进 */
-    text-align: center;           /* 文字居中（虽然文字会被隐藏，但有助于图标定位） */
-    display: flex;                /* 使用弹性布局 */
-    justify-content: center;      /* 水平居中 */
-    align-items: center;          /* 垂直居中 */
+    padding-left: 0 !important;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* 显式固定高度，防止塌陷 */
 }
 
-/* 确保图标没有右侧间距，否则会看起来偏左 */
+/* 确保图标居中且无右边距 */
 .mini-sidebar .flex-bottom a i {
-    margin-right: 0 !important;   /* 移除代码中的 mr-2 类产生的间距 */
+    margin-right: 0 !important;
 }
 
-/* 隐藏折叠后的文字，确保只剩下图标 */
+/* 隐藏折叠后的文字 */
 .mini-sidebar .flex-bottom a span {
     display: none;
 }
