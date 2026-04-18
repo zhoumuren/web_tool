@@ -66,6 +66,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
     padding-left: 0 !important;
     text-align: center;
 }
+
 /* 当侧边栏处于缩进状态（mini-sidebar）时 */
 .mini-sidebar .flex-bottom a {
     padding-left: 0 !important;   /* 移除左侧缩进 */
@@ -84,6 +85,7 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .mini-sidebar .flex-bottom a span {
     display: none;
 }
+
 .sidebar-menu ul:first-child > li> a,.sidebar-menu ul:first-child > li> a span{ line-height:50px;max-height:50px;}
 .sidebar-menu-inner .sidebar-item .sidebar-item >ul>li a span{margin-left:60px}
 .sidebar-item{position:relative;display:block}
