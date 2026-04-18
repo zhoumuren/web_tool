@@ -66,6 +66,24 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
     padding-left: 0 !important;
     text-align: center;
 }
+/* 当侧边栏处于缩进状态（mini-sidebar）时 */
+.mini-sidebar .flex-bottom a {
+    padding-left: 0 !important;   /* 移除左侧缩进 */
+    text-align: center;           /* 文字居中（虽然文字会被隐藏，但有助于图标定位） */
+    display: flex;                /* 使用弹性布局 */
+    justify-content: center;      /* 水平居中 */
+    align-items: center;          /* 垂直居中 */
+}
+
+/* 确保图标没有右侧间距，否则会看起来偏左 */
+.mini-sidebar .flex-bottom a i {
+    margin-right: 0 !important;   /* 移除代码中的 mr-2 类产生的间距 */
+}
+
+/* 隐藏折叠后的文字，确保只剩下图标 */
+.mini-sidebar .flex-bottom a span {
+    display: none;
+}
 .sidebar-menu ul:first-child > li> a,.sidebar-menu ul:first-child > li> a span{ line-height:50px;max-height:50px;}
 .sidebar-menu-inner .sidebar-item .sidebar-item >ul>li a span{margin-left:60px}
 .sidebar-item{position:relative;display:block}
