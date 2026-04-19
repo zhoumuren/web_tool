@@ -590,23 +590,7 @@ footer.main-footer{padding:20px 30px;margin-top:0px}
 .io-black-mode .big-header-banner .page-header {background:transparent;box-shadow:none}
 .io-black-mode .big-header-banner.header-bg .page-header{color:#fff;background:#2c2e2f;box-shadow:0 0 25px 5px rgba(10,10,10,.25)}
 /* --- carousel --- */
-.media-content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border: 0;
-    border-radius: inherit;
-    /* --- 修改以下部分 --- */
-    background-size: contain;      /* 改为 contain，防止图片被强行拉大变形 */
-    background-repeat: repeat;     /* 如果图片小，让它平铺（Dots模式），这样最清晰 */
-    background-position: center; 
-    background-color: rgba(120,120,120,.1);
-    /* --- 增加以下两行，强制锐化边缘 --- */
-    image-rendering: -webkit-optimize-contrast; 
-    image-rendering: crisp-edges;
-}
+.media-content{position:absolute;top:0;bottom:0;left:0;right:0;border:0;border-radius:inherit;background-size:cover;background-repeat:no-repeat;background-position:50% 50%;background-color:rgba(120,120,120,.1)}
 .carousel-item.home-item:after{content:"";display:block;padding-top:300px}
 .carousel-caption{ bottom:0;padding-top:10px;padding-bottom:10px}
 .media{position:relative;display:block;overflow:hidden;padding:0;-ms-flex-negative:0;flex-shrink:0;border-top-left-radius:inherit;border-top-right-radius:inherit}
